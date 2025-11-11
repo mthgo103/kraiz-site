@@ -1,0 +1,20 @@
+<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="200" rx="20" fill="url(#bg2)" />
+  <rect x="84" y="32" width="152" height="136" rx="18" fill="#FFFFFF" stroke="#1F3C8D" stroke-width="6" />
+  <rect x="102" y="52" width="116" height="24" rx="12" fill="#1F3C8D" />
+  <rect x="122" y="72" width="76" height="8" rx="4" fill="#1F3C8D" opacity="0.4" />
+  <path d="M123 114C123 100.193 134.193 89 148 89H172C185.807 89 197 100.193 197 114C197 127.807 185.807 139 172 139H148C134.193 139 123 127.807 123 114Z" fill="url(#dates)" />
+  <path d="M149 108C149 104.134 152.134 101 156 101C159.866 101 163 104.134 163 108" stroke="#5D2B1F" stroke-width="5" stroke-linecap="round" />
+  <path d="M173 108C173 104.134 176.134 101 180 101C183.866 101 187 104.134 187 108" stroke="#5D2B1F" stroke-width="5" stroke-linecap="round" />
+  <defs>
+    <linearGradient id="bg2" x1="32" y1="16" x2="296" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7F0FF" />
+      <stop offset="1" stop-color="#1F3C8D" stop-opacity="0.18" />
+    </linearGradient>
+    <linearGradient id="dates" x1="123" y1="89" x2="197" y2="139" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8A3B28" />
+      <stop offset="1" stop-color="#BF5C2F" />
+    </linearGradient>
+  </defs>
+</svg>
+

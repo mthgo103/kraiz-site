@@ -1,0 +1,19 @@
+<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="200" rx="20" fill="url(#bg)" />
+  <rect x="102" y="38" width="116" height="132" rx="16" fill="#F7F8FB" stroke="#1F3C8D" stroke-width="6" />
+  <rect x="124" y="54" width="72" height="20" rx="10" fill="#1F3C8D" />
+  <path d="M190 54H202C207.523 54 212 58.4772 212 64V76" stroke="#1F3C8D" stroke-width="6" stroke-linecap="round" />
+  <path d="M184 120C184 134.36 170.912 146 154.5 146C138.088 146 125 134.36 125 120C125 105.64 138.088 94 154.5 94C170.912 94 184 105.64 184 120Z" fill="url(#oil)" />
+  <path d="M154.5 100C166.598 100 176.5 108.954 176.5 120" stroke="#1F3C8D" stroke-width="5" stroke-linecap="round" />
+  <defs>
+    <linearGradient id="bg" x1="40" y1="12" x2="288" y2="188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E4ECFF" />
+      <stop offset="1" stop-color="#F2B134" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="oil" x1="125" y1="94" x2="184" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2B134" />
+      <stop offset="1" stop-color="#D68C10" />
+    </linearGradient>
+  </defs>
+</svg>
+
