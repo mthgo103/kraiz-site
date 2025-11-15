@@ -137,10 +137,33 @@
 
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
+      
+      function closeMenu() {
+        if (navLinks && navLinks.classList.contains("open")) {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      }
+
       if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", () => {
           const isOpen = navLinks.classList.toggle("open");
           menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        // إغلاق القائمة عند النقر على أي رابط
+        const navLinksItems = navLinks.querySelectorAll("a");
+        navLinksItems.forEach(link => {
+          link.addEventListener("click", () => {
+            closeMenu();
+          });
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener("click", (e) => {
+          if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            closeMenu();
+          }
         });
       }
     </script>
