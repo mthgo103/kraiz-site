@@ -187,33 +187,46 @@
         <div class="contact-details">
           <div>
             <span class="label">البريد الإلكتروني</span>
-            <a href="mailto:info@kraizgroup.com">info@kraizgroup.com</a>
+            <a href="mailto:kraizcan@hotmail.com">kraizcan@hotmail.com</a>
           </div>
           <div>
             <span class="label">الهاتف</span>
-            <a href="tel:+966112345678">+966 11 234 5678</a>
+            <a href="tel:+966506160128">+966 50 616 0128</a>
           </div>
           <div>
             <span class="label">الموقع</span>
-            <p>الرياض - المملكة العربية السعودية</p>
+            <p>المدينة الصناعية الأولى - بريدة - القصيم - المملكة العربية السعودية</p>
           </div>
         </div>
+        <div class="map-container" style="margin-top: 2rem; border-radius: 12px; overflow: hidden;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3579.1945626137117!2d44.039125!3d26.222867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDEzJzIyLjMiTiA0NMKwMDInMjAuOSJF!5e0!3m2!1sar!2ssa!4v1764095287525!5m2!1sar!2ssa"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" action="https://formsubmit.co/kraizcan@hotmail.com" method="POST">
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_subject" value="رسالة جديدة من موقع مجموعة كريز الصناعية">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="" id="next-url">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        
         <label for="name">الاسم</label>
-        <input id="name" name="name" type="text" placeholder="الاسم الكامل" />
+        <input id="name" name="name" type="text" placeholder="الاسم الكامل" required />
 
         <label for="company">المنشأة</label>
         <input id="company" name="company" type="text" placeholder="اسم الشركة أو النشاط" />
 
         <label for="email">البريد الإلكتروني</label>
-        <input id="email" name="email" type="email" placeholder="name@example.com" />
+        <input id="email" name="email" type="email" placeholder="name@example.com" required />
 
         <label for="message">الرسالة</label>
-        <textarea id="message" name="message" rows="4" placeholder="أخبرنا بطلبك أو الاستفسار"></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="أخبرنا بطلبك أو الاستفسار" required></textarea>
 
-        <button type="submit" disabled>إرسال (نموذج عرض فقط)</button>
-        <small>النموذج للعرض فقط، يمكن تفعيله لاحقاً على خادم البريد.</small>
+        <button type="submit" id="submit-btn">إرسال الرسالة</button>
+        <div id="form-message" class="form-message"></div>
       </form>
     </section>
   </main>
@@ -232,6 +245,7 @@
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    const topNav = document.querySelector(".top-nav");
 
     function closeMenu() {
       if (navLinks && navLinks.classList.contains("open")) {
@@ -261,7 +275,105 @@
         }
       });
     }
+
+    // Navbar scroll effect
+    if (topNav) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          topNav.classList.add("scrolled");
+        } else {
+          topNav.classList.remove("scrolled");
+        }
+      });
+    }
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll("main section").forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (href !== "#" && href !== "#home") {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }
+      });
+    });
+
+    // Contact Form Handling
+    const contactForm = document.querySelector(".contact-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const formMessage = document.getElementById("form-message");
+    const nextUrlInput = document.getElementById("next-url");
+
+    // Set redirect URL after successful submission
+    if (nextUrlInput) {
+      const currentUrl = window.location.href.split("?")[0];
+      nextUrlInput.value = currentUrl + "?success=true";
+    }
+
+    if (contactForm && submitBtn) {
+      contactForm.addEventListener("submit", function(e) {
+        // Show loading state
+        submitBtn.classList.add("loading");
+        submitBtn.textContent = "جاري الإرسال...";
+        submitBtn.disabled = true;
+        
+        // Hide any previous messages
+        formMessage.style.display = "none";
+        formMessage.className = "form-message";
+      });
+
+      // Handle form submission success/error (FormSubmit redirects, so we check URL params)
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("success") === "true") {
+        formMessage.textContent = "تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.";
+        formMessage.classList.add("success");
+        formMessage.style.display = "block";
+        // Reset form
+        contactForm.reset();
+        // Remove success param from URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+      } else if (urlParams.get("success") === "false") {
+        formMessage.textContent = "حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.";
+        formMessage.classList.add("error");
+        formMessage.style.display = "block";
+        // Remove error param from URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
   </script>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/966506160128" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
 </body>
 
 </html>
