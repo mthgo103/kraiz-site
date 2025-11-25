@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>Products - Kraiz Industrial Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body>
+  <header class="hero products-hero">
+    <nav class="top-nav">
+      <a class="brand" href="index.html">
+        <img src="../assets/logo.svg" alt="Kraiz Industrial Group Logo" />
+        <span>Kraiz Industrial Group</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#metal-factory">Metal Industries</a></li>
+        <li><a href="index.html#plastic-factory">Plastic Industries</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+        <li><a href="../products.html" lang="ar" style="font-family: 'Tajawal', sans-serif;">العربية</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Products and Specifications Guide</h1>
+      <p>
+        Explore the range of metal and plastic containers offered by the group's factories,
+        with technical details, standard sizes, and custom options.
+      </p>
+    </div>
+  </header>
+
+  <main id="products">
+    <section class="products">
+      <div class="section-heading">
+        <h2>Browse Our Products</h2>
+        <p>
+          Choose the type of packaging you would like to view for full details and technical specifications.
+        </p>
+      </div>
+
+      <div class="product-cards" style="max-width: 1000px; margin: 0 auto;">
+        <article class="product-card" style="cursor: pointer; transition: transform 0.3s ease;"
+          onclick="window.location.href='metal-products.html'">
+          <figure class="product-figure">
+            <img src="../assets/products/olive-oil-tin.svg" alt="Metal Cans"
+              style="max-height: 200px; object-fit: contain;" />
+          </figure>
+          <h4>Metal Cans</h4>
+          <p style="margin-top: 1rem; color: #4a4a4a;">
+            Integrated manufacturing of tin metal cans suitable for food and industrial products,
+            with various options for lids, finishes, and printing.
+          </p>
+          <ul style="margin-top: 1rem;">
+            <li>Olive Oil Cans</li>
+            <li>Date Cans</li>
+            <li>Kleija and Sweets Cans</li>
+            <li>Paints and Industrial Material Cans</li>
+          </ul>
+          <a href="metal-products.html" class="cta" style="margin-top: 1.5rem; display: inline-block;">View Metal
+            Cans</a>
+        </article>
+
+        <article class="product-card" style="cursor: pointer; transition: transform 0.3s ease;"
+          onclick="window.location.href='plastic-products.html'">
+          <figure class="product-figure">
+            <img src="../assets/products/GPT-32-600x600.webp" alt="Plastic Containers"
+              style="max-height: 200px; object-fit: contain;" />
+          </figure>
+          <h4>Plastic Containers</h4>
+          <p style="margin-top: 1rem; color: #4a4a4a;">
+            Transparent plastic containers made of PET material suitable for fresh and wrapped food,
+            providing visual clarity and optimal protection during storage and transport.
+          </p>
+          <ul style="margin-top: 1rem;">
+            <li>Versatile Round Containers</li>
+            <li>Various Sizes (24, 32, 38, 48 oz)</li>
+            <li>High Quality Transparent Material</li>
+            <li>Stackable</li>
+          </ul>
+          <a href="plastic-products.html" class="cta" style="margin-top: 1.5rem; display: inline-block;">View Plastic
+            Containers</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="products services">
+      <div class="section-heading">
+        <h2>Customization Options</h2>
+        <p>
+          We support custom sizes and special orders, with integrated services
+          for design, printing, and packaging to deliver a final product ready for display and distribution.
+        </p>
+      </div>
+      <div class="service-grid">
+        <article>
+          <h4>Custom Design</h4>
+          <p>
+            Developing new container molds, with prototypes and testing before moving
+            to mass production.
+          </p>
+        </article>
+        <article>
+          <h4>Printing Management</h4>
+          <p>
+            Coordinating specialized printing processes for metal and plastic containers including
+            precise color gradients.
+          </p>
+        </article>
+        <article>
+          <h4>Supply Chain Support</h4>
+          <p>
+            Flexible inventory and supply solutions, and integrated packaging and shipping options to suit
+            product nature and required delivery speed.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> Kraiz Industrial Group. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    function closeMenu() {
+      if (navLinks && navLinks.classList.contains("open")) {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      // Close menu when clicking any link
+      const navLinksItems = navLinks.querySelectorAll("a");
+      navLinksItems.forEach(link => {
+        link.addEventListener("click", () => {
+          closeMenu();
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          closeMenu();
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

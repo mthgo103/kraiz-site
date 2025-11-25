@@ -136,7 +136,7 @@ a {
 .nav-links a::after {
   content: "";
   position: absolute;
-  right: 0;
+  inset-inline-start: 0;
   bottom: -0.4rem;
   width: 0%;
   height: 2px;
@@ -235,7 +235,7 @@ main section {
 
 .about-grid ul {
   margin: 0;
-  padding-right: 1.2rem;
+  padding-inline-start: 1.2rem;
 }
 
 .factory {
@@ -355,7 +355,7 @@ main section {
 
 .product-card ul {
   margin: 0;
-  padding-right: 1.1rem;
+  padding-inline-start: 1.1rem;
 }
 
 .product-group {
@@ -378,7 +378,7 @@ main section {
 .product-group th,
 .product-group td {
   padding: 1rem 1.2rem;
-  text-align: right;
+  text-align: start;
 }
 
 .product-group thead {

@@ -1,171 +1,178 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-    <title>المنتجات - مجموعة كريز الصناعية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  <body>
-    <header class="hero products-hero">
-      <nav class="top-nav">
-        <a class="brand" href="index.html">
-          <img src="assets/logo.svg" alt="شعار مجموعة كريز الصناعية" />
-          <span>مجموعة كريز الصناعية</span>
-        </a>
-        <button class="menu-toggle" aria-expanded="false" aria-label="القائمة">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="index.html#about">من نحن</a></li>
-          <li><a href="index.html#metal-factory">الصناعات المعدنية</a></li>
-          <li><a href="index.html#plastic-factory">صناعات البلاستيك</a></li>
-          <li><a href="products.html">المنتجات</a></li>
-          <li><a href="index.html#contact">تواصل معنا</a></li>
-        </ul>
-      </nav>
-      <div class="hero-content">
-        <h1>دليل المنتجات والمواصفات</h1>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>المنتجات - مجموعة كريز الصناعية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+  <header class="hero products-hero">
+    <nav class="top-nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="شعار مجموعة كريز الصناعية" />
+        <span>مجموعة كريز الصناعية</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-label="القائمة">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">من نحن</a></li>
+        <li><a href="index.html#metal-factory">الصناعات المعدنية</a></li>
+        <li><a href="index.html#plastic-factory">صناعات البلاستيك</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="index.html#contact">تواصل معنا</a></li>
+        <li><a href="en/products.html" lang="en" style="font-family: 'Tajawal', sans-serif;">English</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>دليل المنتجات والمواصفات</h1>
+      <p>
+        استعرض تشكيلات العبوات المعدنية والبلاستيكية التي تقدمها مصانع المجموعة،
+        مع التفاصيل الفنية والقياسات القياسية وخيارات التخصيص حسب الطلب.
+      </p>
+    </div>
+  </header>
+
+  <main id="products">
+    <section class="products">
+      <div class="section-heading">
+        <h2>تصفح منتجاتنا</h2>
         <p>
-          استعرض تشكيلات العبوات المعدنية والبلاستيكية التي تقدمها مصانع المجموعة،
-          مع التفاصيل الفنية والقياسات القياسية وخيارات التخصيص حسب الطلب.
+          اختر نوع العبوات التي تود الاطلاع عليها لعرض التفاصيل الكاملة والمواصفات الفنية
         </p>
       </div>
-    </header>
 
-    <main id="products">
-      <section class="products">
-        <div class="section-heading">
-          <h2>تصفح منتجاتنا</h2>
-          <p>
-            اختر نوع العبوات التي تود الاطلاع عليها لعرض التفاصيل الكاملة والمواصفات الفنية
+      <div class="product-cards" style="max-width: 1000px; margin: 0 auto;">
+        <article class="product-card" style="cursor: pointer; transition: transform 0.3s ease;"
+          onclick="window.location.href='metal-products.html'">
+          <figure class="product-figure">
+            <img src="assets/products/olive-oil-tin.svg" alt="العبوات المعدنية"
+              style="max-height: 200px; object-fit: contain;" />
+          </figure>
+          <h4>العبوات المعدنية</h4>
+          <p style="margin-top: 1rem; color: #4a4a4a;">
+            تصنيع متكامل للعبوات المعدنية من الصفيح المناسبة للمنتجات الغذائية والصناعية،
+            مع خيارات متنوعة للأغطية والتشطيبات والطباعة.
           </p>
-        </div>
+          <ul style="margin-top: 1rem;">
+            <li>علب زيت الزيتون</li>
+            <li>علب التمور</li>
+            <li>علب الكليجا والحلويات</li>
+            <li>علب البويات والمواد الصناعية</li>
+          </ul>
+          <a href="metal-products.html" class="cta" style="margin-top: 1.5rem; display: inline-block;">استعرض العبوات
+            المعدنية</a>
+        </article>
 
-        <div class="product-cards" style="max-width: 1000px; margin: 0 auto;">
-          <article class="product-card" style="cursor: pointer; transition: transform 0.3s ease;" onclick="window.location.href='metal-products.html'">
-            <figure class="product-figure">
-              <img src="assets/products/olive-oil-tin.svg" alt="العبوات المعدنية" style="max-height: 200px; object-fit: contain;" />
-            </figure>
-            <h4>العبوات المعدنية</h4>
-            <p style="margin-top: 1rem; color: #4a4a4a;">
-              تصنيع متكامل للعبوات المعدنية من الصفيح المناسبة للمنتجات الغذائية والصناعية،
-              مع خيارات متنوعة للأغطية والتشطيبات والطباعة.
-            </p>
-            <ul style="margin-top: 1rem;">
-              <li>علب زيت الزيتون</li>
-              <li>علب التمور</li>
-              <li>علب الكليجا والحلويات</li>
-              <li>علب البويات والمواد الصناعية</li>
-            </ul>
-            <a href="metal-products.html" class="cta" style="margin-top: 1.5rem; display: inline-block;">استعرض العبوات المعدنية</a>
-          </article>
-
-          <article class="product-card" style="cursor: pointer; transition: transform 0.3s ease;" onclick="window.location.href='plastic-products.html'">
-            <figure class="product-figure">
-              <img src="assets/products/GPT-32-600x600.webp" alt="العبوات البلاستيكية" style="max-height: 200px; object-fit: contain;" />
-            </figure>
-            <h4>العبوات البلاستيكية</h4>
-            <p style="margin-top: 1rem; color: #4a4a4a;">
-              عبوات بلاستيكية شفافة من مادة PET مناسبة للأغذية الطازجة والمغلفة،
-              توفر وضوحاً بصرياً وحماية مثالية أثناء التخزين والنقل.
-            </p>
-            <ul style="margin-top: 1rem;">
-              <li>عبوات دائرية متعددة الاستخدامات</li>
-              <li>مقاسات متنوعة (24، 32، 38، 48 أونصة)</li>
-              <li>مادة شفافة عالية الجودة</li>
-              <li>قابلة للتكديس</li>
-            </ul>
-            <a href="plastic-products.html" class="cta" style="margin-top: 1.5rem; display: inline-block;">استعرض العبوات البلاستيكية</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="products services">
-        <div class="section-heading">
-          <h2>خيارات التخصيص</h2>
-          <p>
-            ندعم تصنيع القياسات الخاصة والطلبيات المخصصة، مع خدمات متكاملة
-            للتصميم والطباعة والتغليف لتقديم منتج نهائي جاهز للعرض والتوزيع.
+        <article class="product-card" style="cursor: pointer; transition: transform 0.3s ease;"
+          onclick="window.location.href='plastic-products.html'">
+          <figure class="product-figure">
+            <img src="assets/products/GPT-32-600x600.webp" alt="العبوات البلاستيكية"
+              style="max-height: 200px; object-fit: contain;" />
+          </figure>
+          <h4>العبوات البلاستيكية</h4>
+          <p style="margin-top: 1rem; color: #4a4a4a;">
+            عبوات بلاستيكية شفافة من مادة PET مناسبة للأغذية الطازجة والمغلفة،
+            توفر وضوحاً بصرياً وحماية مثالية أثناء التخزين والنقل.
           </p>
-        </div>
-        <div class="service-grid">
-          <article>
-            <h4>تصميم حسب الطلب</h4>
-            <p>
-              تطوير قوالب جديدة للعبوات، مع نماذج أولية واختبارات قبل الانتقال
-              للإنتاج الكمي.
-            </p>
-          </article>
-          <article>
-            <h4>إدارة الطباعة</h4>
-            <p>
-              تنسيق عمليات الطباعة المتخصصة للعبوات المعدنية والبلاستيكية بما
-              يشمل التدرجات اللونية الدقيقة.
-            </p>
-          </article>
-          <article>
-            <h4>دعم سلسلة الإمداد</h4>
-            <p>
-              حلول مخزون وتوريد مرنة، وخيارات تغليف وشحن متكاملة تناسب طبيعة
-              المنتج وسرعة التسليم المطلوبة.
-            </p>
-          </article>
-        </div>
-      </section>
-    </main>
+          <ul style="margin-top: 1rem;">
+            <li>عبوات دائرية متعددة الاستخدامات</li>
+            <li>مقاسات متنوعة (24، 32، 38، 48 أونصة)</li>
+            <li>مادة شفافة عالية الجودة</li>
+            <li>قابلة للتكديس</li>
+          </ul>
+          <a href="plastic-products.html" class="cta" style="margin-top: 1.5rem; display: inline-block;">استعرض العبوات
+            البلاستيكية</a>
+        </article>
+      </div>
+    </section>
 
-    <footer>
-      <p>
-        &copy; <span id="year"></span> مجموعة كريز الصناعية. جميع الحقوق محفوظة.
-      </p>
-    </footer>
+    <section class="products services">
+      <div class="section-heading">
+        <h2>خيارات التخصيص</h2>
+        <p>
+          ندعم تصنيع القياسات الخاصة والطلبيات المخصصة، مع خدمات متكاملة
+          للتصميم والطباعة والتغليف لتقديم منتج نهائي جاهز للعرض والتوزيع.
+        </p>
+      </div>
+      <div class="service-grid">
+        <article>
+          <h4>تصميم حسب الطلب</h4>
+          <p>
+            تطوير قوالب جديدة للعبوات، مع نماذج أولية واختبارات قبل الانتقال
+            للإنتاج الكمي.
+          </p>
+        </article>
+        <article>
+          <h4>إدارة الطباعة</h4>
+          <p>
+            تنسيق عمليات الطباعة المتخصصة للعبوات المعدنية والبلاستيكية بما
+            يشمل التدرجات اللونية الدقيقة.
+          </p>
+        </article>
+        <article>
+          <h4>دعم سلسلة الإمداد</h4>
+          <p>
+            حلول مخزون وتوريد مرنة، وخيارات تغليف وشحن متكاملة تناسب طبيعة
+            المنتج وسرعة التسليم المطلوبة.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-    <script>
-      const yearSpan = document.getElementById("year");
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+  <footer>
+    <p>
+      &copy; <span id="year"></span> مجموعة كريز الصناعية. جميع الحقوق محفوظة.
+    </p>
+  </footer>
+
+  <script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    function closeMenu() {
+      if (navLinks && navLinks.classList.contains("open")) {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
       }
+    }
 
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-      
-      function closeMenu() {
-        if (navLinks && navLinks.classList.contains("open")) {
-          navLinks.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      // إغلاق القائمة عند النقر على أي رابط
+      const navLinksItems = navLinks.querySelectorAll("a");
+      navLinksItems.forEach(link => {
+        link.addEventListener("click", () => {
+          closeMenu();
+        });
+      });
+
+      // إغلاق القائمة عند النقر خارجها
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          closeMenu();
         }
-      }
+      });
+    }
+  </script>
+</body>
 
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => {
-          const isOpen = navLinks.classList.toggle("open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
-
-        // إغلاق القائمة عند النقر على أي رابط
-        const navLinksItems = navLinks.querySelectorAll("a");
-        navLinksItems.forEach(link => {
-          link.addEventListener("click", () => {
-            closeMenu();
-          });
-        });
-
-        // إغلاق القائمة عند النقر خارجها
-        document.addEventListener("click", (e) => {
-          if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-            closeMenu();
-          }
-        });
-      }
-    </script>
-  </body>
 </html>
