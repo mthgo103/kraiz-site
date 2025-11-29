@@ -16,6 +16,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -26,15 +27,19 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
@@ -45,6 +50,7 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -56,6 +62,7 @@
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -96,10 +103,13 @@ a {
 
 .hero {
   min-height: 100vh;
-  background: radial-gradient(circle at top right, rgba(31, 60, 141, 0.15), transparent),
-    linear-gradient(135deg, rgba(31, 60, 141, 0.85), rgba(31, 60, 141, 0.55));
-  background-size: cover;
-  background-position: center;
+  background:
+    radial-gradient(circle at top right, rgba(31, 60, 141, 0.15), transparent),
+    linear-gradient(135deg, rgba(31, 60, 141, 0.85), rgba(31, 60, 141, 0.55)),
+    url('../assets/hero-background.jpg');
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-blend-mode: normal, multiply, normal;
   color: var(--white);
   position: relative;
   display: flex;
@@ -691,7 +701,7 @@ main section.visible {
   animation: pulse 3s ease-in-out infinite;
 }
 
-.contact-card > * {
+.contact-card>* {
   position: relative;
   z-index: 1;
 }
@@ -875,18 +885,18 @@ footer::before {
 }
 
 /* Contact Details Enhancements */
-.contact-details > div {
+.contact-details>div {
   transition: all 0.3s ease;
   padding: 0.5rem;
   border-radius: 8px;
 }
 
-.contact-details > div:hover {
+.contact-details>div:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateX(-5px);
 }
 
-html[dir="rtl"] .contact-details > div:hover {
+html[dir="rtl"] .contact-details>div:hover {
   transform: translateX(5px);
 }
 
@@ -1080,6 +1090,7 @@ html[dir="rtl"] .contact-details > div:hover {
     transform: scale(0.8);
     opacity: 1;
   }
+
   100% {
     transform: scale(1.5);
     opacity: 0;
