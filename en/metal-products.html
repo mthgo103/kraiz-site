@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
+    <meta name="description" content="Kraiz Industrial Group: tinplate metal containers and clear PET plastic containers for food and industrial packaging, with custom manufacturing options." />
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
   <title>Metal Products - Kraiz Industrial Group</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -110,28 +112,28 @@
           </thead>
           <tbody>
             <tr>
-              <td>Olive Oil Cans</td>
-              <td>10x15x24</td>
-              <td>5 Liters</td>
-              <td>Metal or plastic spout option</td>
+              <td data-label="Product">Olive Oil Cans</td>
+              <td data-label="Dimensions (cm)">10x15x24</td>
+              <td data-label="Capacity">5 Liters</td>
+              <td data-label="Notes">Metal or plastic spout option</td>
             </tr>
             <tr>
-              <td>Date Cans</td>
-              <td>20x30x8</td>
-              <td>3 kg</td>
-              <td>Food-grade internal coating</td>
+              <td data-label="Product">Date Cans</td>
+              <td data-label="Dimensions (cm)">20x30x8</td>
+              <td data-label="Capacity">3 kg</td>
+              <td data-label="Notes">Food-grade internal coating</td>
             </tr>
             <tr>
-              <td>Kleija Cans</td>
-              <td>25x25x7</td>
-              <td>1 kg</td>
-              <td>Optional transparent lid</td>
+              <td data-label="Product">Kleija Cans</td>
+              <td data-label="Dimensions (cm)">25x25x7</td>
+              <td data-label="Capacity">1 kg</td>
+              <td data-label="Notes">Optional transparent lid</td>
             </tr>
             <tr>
-              <td>Paint Cans</td>
-              <td>23x23x35</td>
-              <td>18 kg</td>
-              <td>Reinforced metal handle</td>
+              <td data-label="Product">Paint Cans</td>
+              <td data-label="Dimensions (cm)">23x23x35</td>
+              <td data-label="Capacity">18 kg</td>
+              <td data-label="Notes">Reinforced metal handle</td>
             </tr>
           </tbody>
         </table>
@@ -187,10 +189,17 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    if (window.AOS) {
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    } else {
+      document.querySelectorAll("[data-aos]").forEach(function (el) {
+        el.removeAttribute("data-aos");
+        el.removeAttribute("data-aos-delay");
+      });
+    }
   </script>
   <script>
     const yearSpan = document.getElementById("year");
