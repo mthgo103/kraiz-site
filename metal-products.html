@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
+    <meta name="description" content="مجموعة كريز الصناعية: عبوات معدنية من الصفيح وعبوات بلاستيكية شفافة PET لتغليف الأغذية والمنتجات الصناعية، مع خيارات تصنيع حسب الطلب." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
   <title>العبوات المعدنية - مجموعة كريز الصناعية</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -110,28 +112,28 @@
           </thead>
           <tbody>
             <tr>
-              <td>علب زيت الزيتون</td>
-              <td>10×15×24</td>
-              <td>5 لتر</td>
-              <td>خيار صنبور معدني أو بلاستيكي</td>
+              <td data-label="المنتج">علب زيت الزيتون</td>
+              <td data-label="الأبعاد (سم)">10×15×24</td>
+              <td data-label="السعة">5 لتر</td>
+              <td data-label="الملاحظات">خيار صنبور معدني أو بلاستيكي</td>
             </tr>
             <tr>
-              <td>علب التمور</td>
-              <td>20×30×8</td>
-              <td>3 كجم</td>
-              <td>طبقة داخلية غذائية</td>
+              <td data-label="المنتج">علب التمور</td>
+              <td data-label="الأبعاد (سم)">20×30×8</td>
+              <td data-label="السعة">3 كجم</td>
+              <td data-label="الملاحظات">طبقة داخلية غذائية</td>
             </tr>
             <tr>
-              <td>علب الكليجا</td>
-              <td>25×25×7</td>
-              <td>1 كجم</td>
-              <td>غطاء شفاف اختياري</td>
+              <td data-label="المنتج">علب الكليجا</td>
+              <td data-label="الأبعاد (سم)">25×25×7</td>
+              <td data-label="السعة">1 كجم</td>
+              <td data-label="الملاحظات">غطاء شفاف اختياري</td>
             </tr>
             <tr>
-              <td>علب البويات</td>
-              <td>23×23×35</td>
-              <td>18 كجم</td>
-              <td>مقبض معدني معزز</td>
+              <td data-label="المنتج">علب البويات</td>
+              <td data-label="الأبعاد (سم)">23×23×35</td>
+              <td data-label="السعة">18 كجم</td>
+              <td data-label="الملاحظات">مقبض معدني معزز</td>
             </tr>
           </tbody>
         </table>
@@ -187,10 +189,17 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    if (window.AOS) {
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    } else {
+      document.querySelectorAll("[data-aos]").forEach(function (el) {
+        el.removeAttribute("data-aos");
+        el.removeAttribute("data-aos-delay");
+      });
+    }
   </script>
   <script>
     const yearSpan = document.getElementById("year");
